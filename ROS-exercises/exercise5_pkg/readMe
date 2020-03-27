@@ -1,0 +1,21 @@
+Generare tre tartarughe. Controllare la prima dal punto iniziale ad un punto dato finale con un controllo a 50 hz evitando la collisione con le altre due (ferme). Testare l'algoritmo in varie configurazioni delle tarturghe "ostacolo".
+
+-------------------------------------------------------------------
+
+Lanciare uno dei seguenti comandi
+
+    - roslaunch exercise5_pkg turtle_obstacle_avoidance1.launch
+
+si simula uno scenario con un raggio di influenza pari a 2.5 m.
+
+    - roslaunch exercise5_pkg turtle_obstacle_avoidance2.launch
+
+si simula uno scenario con un raggio di influenza pari a 3 m.
+
+    - roslaunch exercise5_pkg turtle_obstacle_avoidance3.launch
+
+si simula uno scenario con un raggio di influenza pari a 3 m.
+
+    - roslaunch exercise5_pkg turtle_obstacle_avoidance4.launch
+
+si simula uno scenario con un raggio di influenza pari a 3 m, in cui si evidenzia il problema dei minimi locali con il metodo dei potenziali

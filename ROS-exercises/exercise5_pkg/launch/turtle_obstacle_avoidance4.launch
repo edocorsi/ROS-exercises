@@ -1,0 +1,16 @@
+<launch>
+
+<!-- Turtlesim Node-->
+<node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+
+<!-- Spawn two more turtles -->
+<node pkg="rosservice" type="rosservice" name="create_turtle2" args='call --wait /spawn "{x: 9.5, y: 8.5, theta: 0.0, name: turtle2}" '/>
+<node pkg="rosservice" type="rosservice" name="create_turtle3" args='call --wait /spawn "{x: 8.5, y: 9.5, theta: 0.0, name: turtle3}" '/>
+
+<!-- Launch turtle_obstacle_avoidance node -->
+<node name="turtle_obstacle_avoidance" pkg="exercise5_pkg" type="exercise5" output="screen">
+    <param name="x_target" value="10.0"/>
+    <param name="y_target" value="10.0"/>
+    <param name="radius_of_influence" value="3.0"/>
+  </node>
+</launch>

@@ -1,0 +1,8 @@
+Esercizio 1:
+Utilizzando il nodo turtlesim, visualizzare la posa della tartaruga su rviz mentre viene controllata con la tastiera
+
+--------------------------------------------------------------------------------------------------------------------
+
+Lanciare il comando
+
+    roslaunch exercise1_pkg turtle_pose_to_rviz.launch

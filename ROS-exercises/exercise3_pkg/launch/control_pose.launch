@@ -1,0 +1,9 @@
+<launch>
+
+    <!-- Launch turtle node -->
+    <node name="turtle_node" pkg="turtlesim" type="turtlesim_node" output="screen"/>
+ 
+    <!-- Launch control_pose node -->
+    <node name="control_pose" pkg="exercise3_pkg" type="exercise3" output="screen"/>
+    
+</launch>

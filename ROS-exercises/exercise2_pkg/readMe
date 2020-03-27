@@ -1,0 +1,13 @@
+Esercizio 2:
+Scrivere un nodo che simuli un controllore di alto livello che, presa in ingresso una richiesta di controllo di tipo custom (contenente velocità lineare longitudinale e velocità angolare sullo yaw), generi un controllo per la tartaruga di tipo opportuno che applichi una saturazione sulla richiesta di controllo. I valori della saturazione devono essere impostabili come parametro del nodo. Dimostrare l'effettivo funzionamento del nodo confrontando la richiesta di controllo e il controllo effettuato su rqt_plot
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Lanciando il comando
+
+    roslaunch exercise2_pkg velocity_control.launch
+
+si utilizzano i parametri di default settati all'interno del file velocity_control.launch.
+Se invece si desidera modificare i valori dei parametri si utilizza il comando
+
+    roslaunch exercise2_pkg velocity_control.launch sat_min_long_vel:=valore sat_max_long_vel:=valore sat_min_yaw_rate:=valore sat_max_yaw_rate:=valore

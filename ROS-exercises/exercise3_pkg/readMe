@@ -1,0 +1,9 @@
+Esercizio 3:
+Settando la posizione iniziale della tartuga al centro della mappa, controllare la tartaruga con un controllo random in velocità lineare e angolare 
+(in un intervallo limitato sensato) che vincoli il movimento nella metà superiore della mappa
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Lanciare il comando
+
+    roslaunch exercise3_pkg control_pose.launch

@@ -1,0 +1,28 @@
+<launch> 
+    
+    <!-- Launch turtlesim Node-->
+    <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+
+    <!-- Spawn three more turtles -->
+    <node pkg="rosservice" type="rosservice" name="create_turtle2" args='call --wait /spawn "{x: 8.0,y: 7.0, theta: 1.0, name: turtle2}" '/>
+    <node pkg="rosservice" type="rosservice" name="create_turtle3" args='call --wait /spawn "{x: 8.0,y: 1.0, theta: -0.20, name: turtle3}" '/>
+    <node pkg="rosservice" type="rosservice" name="create_turtle4" args='call --wait /spawn "{x: 4.0,y: 1.0, theta: 0.3, name: turtle4}" '/>
+
+    <!-- Launch 4 turtle controllers -->
+    <node name="move_robot_1" pkg="exercise4_pkg" type="command_turtle_distribuito" output="screen" > 
+        <param name="robot_name" value="turtle1"/>
+    </node>
+    
+    <node name="move_robot_2" pkg="exercise4_pkg" type="command_turtle_distribuito" output="screen" >
+        <param name="robot_name" value="turtle2"/>
+    </node>
+    
+    <node name="move_robot_3" pkg="exercise4_pkg" type="command_turtle_distribuito" output="screen" >
+        <param name="robot_name" value="turtle3"/>
+    </node>
+
+    <node name="move_robot_4" pkg="exercise4_pkg" type="command_turtle_distribuito" output="screen" >
+        <param name="robot_name" value="turtle4"/>
+    </node>
+
+</launch>

@@ -1,0 +1,25 @@
+<launch>
+    
+    <!-- Launch controller node -->
+    <arg name="sat_min_long_vel" default="-0.2"/>
+    <arg name="sat_max_long_vel" default="1.8"/>
+    <arg name="sat_min_yaw_rate" default="-1.5"/>
+    <arg name="sat_max_yaw_rate" default="1.5"/>
+    
+    <node name="controller" pkg="exercise2_pkg" type="exercise2" output="screen"> 
+        <param name="sat_min_long_vel" value="$(arg sat_min_long_vel)"/>
+        <param name="sat_max_long_vel" value="$(arg sat_max_long_vel)"/>
+        <param name="sat_min_yaw_rate" value="$(arg sat_min_yaw_rate)"/> 
+        <param name="sat_max_yaw_rate" value="$(arg sat_max_yaw_rate)"/> 
+    </node>
+        
+    <!-- Launch turtlesim_node -->
+    <node name = "turtle_node" pkg = "turtlesim" type = "turtlesim_node" output = "screen"/> 
+    
+    <!-- Launch node that publish messages on topic /controller_robot/velocity at 10 Hz -->
+    <node name="publisher" pkg="rostopic" type="rostopic" args="pub -r 10 /control_velocity exercise2_pkg/robot_velocity &quot; longitudinal_velocity: 3.0 &#13; yaw_rate: -2.0 &quot;" output="screen" />
+     
+    <!-- Launch rqt_plot -->
+    <node name = "rqt_plot" pkg = "rqt_plot" type = "rqt_plot" args ="/turtle1/cmd_vel/linear/x /turtle1/cmd_vel/angular/z /control_velocity" output="screen"/>
+        
+</launch>

@@ -1,0 +1,15 @@
+<launch>
+    
+<!-- Launch turtlesim_node node-->
+    <node name="turtle_node" pkg="turtlesim" type="turtlesim_node" output="screen"/>
+
+<!-- Launch turtle_teleop_key node -->
+    <node name="turtle_teleop" pkg="turtlesim" type="turtle_teleop_key" output="screen"/>
+ 
+<!-- Launch exercise1 node -->
+    <node name="turtle_pose_to_display" pkg="exercise1_pkg" type="exercise1" output="screen"/>
+    
+<!-- Launch rviz node with custom config file -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find exercise1_pkg)/rviz/config.rviz" />
+    
+</launch>
